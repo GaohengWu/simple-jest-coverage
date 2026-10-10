@@ -8,6 +8,10 @@ describe('Payment Service', () => {
   })
 
   describe('payment', () => {
+    test('Verify that the initial payment status is false', () => {
+      expect(payment.isPaid).toBeFalsy()
+    })
+
     test('Verify if the payment amount is -1, an error is thrown', () => {
       expect(() => {
         new PaymentService(-1, false)
